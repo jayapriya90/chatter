@@ -1,5 +1,4 @@
--- +goose Up
--- SQL in section 'Up' is applied when this migration is applied
+\connect chatter
 
 CREATE TABLE IF NOT EXISTS userinfo (
     id bigserial PRIMARY KEY,
@@ -19,7 +18,7 @@ CREATE TABLE IF NOT EXISTS chatroom (
 
 CREATE TABLE IF NOT EXISTS chatroom_user (
     chatroom_id bigint REFERENCES chatroom(id),
-    user_id bigint REFERENCES userinfo(id),
+    user_id bigint REFERENCES userinfo(id)
 );
 
 CREATE TABLE IF NOT EXISTS message (
@@ -27,13 +26,5 @@ CREATE TABLE IF NOT EXISTS message (
     chatroom_id bigint REFERENCES chatroom(id),
     user_id bigint REFERENCES userinfo(id),
     message text NOT NULL,
-    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-
--- +goose Down
--- SQL in section 'Down' is executed when this migration is rolled back
-DROP TABLE message;
-DROP TABLE chatroom_user;
-DROP TABLE chatroom;
-DROP TABLE user;
-
