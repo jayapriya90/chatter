@@ -1,0 +1,7 @@
+[[override]]
+  name = "github.com/pressly/goose"
+  version = "^v2.0.0"
+
+[prune]
+  go-tests = true
+  unused-packages = true
