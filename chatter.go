@@ -14,7 +14,7 @@ var port = flag.Int("port", 8888, "port to run the chatter service")
 
 func main() {
 	log.SetFormatter(&log.TextFormatter{
-		FullTimestamp: true, 
+		FullTimestamp:   true,
 		TimestampFormat: time.RFC3339Nano,
 	})
 	log.SetLevel(log.DebugLevel)

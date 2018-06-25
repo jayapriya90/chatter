@@ -17,3 +17,6 @@ setup: clean
 	go get -u github.com/golang/dep/cmd/dep
 	# go get -u github.com/pressly/goose/cmd/goose
 	dep ensure
+
+format:
+	go fmt ./...
