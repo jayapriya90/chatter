@@ -4,7 +4,7 @@ GOOS        ?= linux
 GOARCH      ?= amd64
 BINDIR 		:= $(CURDIR)/bin
 DISTDIR     := $(CURDIR)/dist 
-LDFLAGS     := -w -s
+LDFLAGS     := -w
 
 .PHONY: install setup clean
 install:
