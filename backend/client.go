@@ -24,7 +24,9 @@ var upgrader = websocket.Upgrader{
 type Client struct {
 	server *Server
 	// The websocket connection.
-	conn *websocket.Conn
+	conn       *websocket.Conn
+	clientID   string
+	chatRoomID string
 	// Buffered channel for outbound messages.
 	outboundMessageChan chan []byte
 }
